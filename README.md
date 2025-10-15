@@ -22,6 +22,10 @@ A simple teaching to understand the tools needed to begin projects with the Robo
 
 - Once you get an idea of what ROS2 is, proceed to installing the correct Ubuntu and ROS2 distribution to a Virtual Machine or on a separate partition in your disk.
 - Just as a bonus, you can install the 'terminator' which allows you to split your terminals and work on different commads on one terminal. Press Ctrl+alt+T on a normal terminal open a terminal that enables terminator.
+  - Ctr + Shift + O : Horizontal split
+  - Ctr + Shift + E : Vertical split
+  - Ctr + Shift + X : Make the current terminal fill the entire window, use again to revert
+  - Ctr + Shift + W : Close a terminal
   ``` bash
   sudo apt install terminator
   ```
@@ -46,6 +50,26 @@ A simple teaching to understand the tools needed to begin projects with the Robo
   ros2 run turtlesim turtle_teleop_key
   ```
 ## Topics
+- Suitable for data streams flowing in one direction between nodes. (Publisher and Subscriber) The talker and listener that was being run before used a topic called /Chatter. Each topic has a **Name** and **Interface**
+- Run the talker and listener on separate terminals and on third terminal, list the available topics. THis will give you the topic **name**
+    ``` bash
+    ros2 topic list
+    ```
+- Now time to obtain the interface (what kind of data is being sent).
+    ``` bash
+    ros2 topic info <topic_name>
+    ```
+- To see what's inside an interface, run:
+    ``` bash
+    ros2 interface show <interface_name>
+    ```
+- **Challenge** find the topic used to send velocity commands to the turtle in turtle_sim and send a velocity command from the terminal
+- **Solution**
+    ``` bash
+    ros2 topic pub <topic_name> <interface_name> "<data>"
+    ```
+## Services
+
 
 
 
