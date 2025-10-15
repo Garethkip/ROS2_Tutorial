@@ -50,7 +50,7 @@ A simple teaching to understand the tools needed to begin projects with the Robo
   ros2 run turtlesim turtle_teleop_key
   ```
 ## Topics
-- Suitable for data streams flowing in one direction between nodes. (Publisher and Subscriber) The talker and listener that was being run before used a topic called /Chatter. Each topic has a **Name** and **Interface**
+- Suitable for data streams flowing in one direction between nodes. (Publisher and Subscriber) The talker and listener that was being run before used a topic called /Chatter. Each topic has a **Name** and **Interface**. Each topic can have multiple subscribers and multiple publishers.
 - Run the talker and listener on separate terminals and on third terminal, list the available topics. THis will give you the topic **name**
     ``` bash
     ros2 topic list
@@ -69,6 +69,35 @@ A simple teaching to understand the tools needed to begin projects with the Robo
     ros2 topic pub <topic_name> <interface_name> "<data>"
     ```
 ## Services
+- Allows for two nodes (client and server) to communicate by sending request and receiving a response. It is therefore not suitable for data streams. It allows for multiple clients but only one server.
+- We can run a demo server and demo client.
+  ``` bash
+  ros2 run demo_nodes_cpp add_two_ints_server
+  ```
+  ``` bash
+  ros2 run demo_nodes_cpp add_two_ints_client
+  ```
+- Let's find the name and interface of the above service. The command below will allow you to find the service name.
+  ``` bash
+  ros2 service list
+  ```
+- Find the imterface name
+  ``` bash
+  ros2 service type <service_name>
+  ```
+- See the structure of the interface with: (the varibales above the 3 dashes represent the request while that below represent the result)
+  ``` bash
+  ros2 interface show <interface_name>
+  ```
+- Once you know the service_name and interface_name and structure, you can make a custom command from the terminal:
+  ``` bash
+  ros2 service call <service_name> <interface_name> "<request in json>"
+  ```
+  - **Challenge** : Use a custom service to spawn a new turtle on the turtlesim window.
+
+  ## Actions
+  - Is basically a service that has feedback so that it can be used on tasks that take sometime to complete.
+  
 
 
 
