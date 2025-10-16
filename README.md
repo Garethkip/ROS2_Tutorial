@@ -198,7 +198,22 @@ A simple teaching to understand the tools needed to begin projects with the Robo
   chmod +x my_first_node.py
   ```
 ### Writing a basic python node
-  
+
+- You can open the my_py_pkg for more elaboration.
+- The node prints a string on the terminal, utilizes a timer to increment a counter variable every second and print the result. (The code as enough comments, hehe)
+- Also after writing the node, do not forget to edit the setup.py file:
+  ``` python
+      entry_points={
+        'console_scripts': [
+            "my_node_execute = my_py_pkg.my_first_node:main" #<executable_name> = <package_name>.<file_name>:<function_name>
+        ],
+    },
+  ```
+- The **executable name** is what you will use when running (ros2 run <package_name> <executable_name>)
+- The **package name** is the name of your package i.e "my_py_pkg"
+- The **file name** is the name of the file in which you created the node
+- The **function name** is the "main" function in the file
+
 
 
 
