@@ -49,7 +49,7 @@ A simple teaching to understand the tools needed to begin projects with the Robo
   ``` bash
   ros2 run turtlesim turtle_teleop_key
   ```
-## Topics
+## Topics intro.
 - Suitable for data streams flowing in one direction between nodes. (Publisher and Subscriber) The talker and listener that was being run before used a topic called /Chatter. Each topic has a **Name** and **Interface**. Each topic can have multiple subscribers and multiple publishers.
 - Run the talker and listener on separate terminals and on third terminal, list the available topics. THis will give you the topic **name**
     ``` bash
@@ -68,7 +68,7 @@ A simple teaching to understand the tools needed to begin projects with the Robo
     ``` bash
     ros2 topic pub <topic_name> <interface_name> "<data>"
     ```
-## Services
+## Services intro.
 - Allows for two nodes (client and server) to communicate by sending request and receiving a response. It is therefore not suitable for data streams. It allows for multiple clients but only one server.
 - We can run a demo server and demo client.
   ``` bash
@@ -93,11 +93,86 @@ A simple teaching to understand the tools needed to begin projects with the Robo
   ``` bash
   ros2 service call <service_name> <interface_name> "<request in json>"
   ```
-  - **Challenge** : Use a custom service to spawn a new turtle on the turtlesim window.
+- **Challenge** : Use a custom service to spawn a new turtle on the turtlesim window.
 
-  ## Actions
-  - Is basically a service that has feedback so that it can be used on tasks that take sometime to complete.
+## Actions intro.
+- Is basically a service that has feedback so that it can be used on tasks that take sometime to complete. They also allow you to cancel a task midway.
+- You can run the turtlesim node again and list the active actions: (this will give you the action name)
+    ``` bash
+    ros2 action list
+    ```
+- Find the name(previous command) and interface of the action. This time the interface has a goal, result and feedback.
+  ``` bash
+  ros2 action info <action_name> -t
+  ```
+- The above command will give you the interface name (the one in square brackets)
+- Let's see what's in the interface:(goal, result, feedback)
+  ``` bash
+  ros2 interface show <interface_name>
+  ```
+- Let's send a goal from the terminal:
+  ``` bash
+  ros2 action send_goal <action_name> <interface_name> "<goal_in_json>"
+  ```
+
+## Parameters intro.
+- They are the settings you give to a node when you start it.
+- Run the turtlesim node again and list the active parameters.
+  ``` bash
+  ros2 param list
+  ```
+- What's inside a parameter?
+  ``` bash
+  ros2 param get <node_name> <param_name>
+  ```
+- Run a node by setting values to its parameters at the terminal. (add -p <param_name>:=value for each parameter)
+  ``` bash
+  ros2 run <package_name> <executable_name> --ros-args -p <param_name>:=value
+  ```
+
+## Launch files intro.
+
+- Allows you to start several nodes and parameters from just one file
+  ``` bash
+  ros2 launch <package_name> <launch_file>
+  ```
+- Start a demo launch file.
+  ``` bash
+  ros2 launch demo_nodes_cpp talker_listener_launch.py
+  ```
+- If you list the nodes you'll observe both talker and listener are active.
+- You can also start multiple instances of a node each with a different name using a launch file. An example is the turtlesim node:
+  ``` bash
+  ros2 launch turtlesim multisim.launch.py
+  ```
+
+## Building a ROS2 node
+
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
