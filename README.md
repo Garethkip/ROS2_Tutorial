@@ -147,7 +147,57 @@ A simple teaching to understand the tools needed to begin projects with the Robo
   ```
 
 ## Building a ROS2 node
+- Create a workspace (you can name it anything insted of ros2_ws)
+  ``` bash
+  mkdir ros2_ws
+  ```
+- Create the 'src' which is where all your ros2 code will go:
+  ``` bash
+  cd ros2_ws
+  mkdir src
+  ```
+- Build the workspace (We haven't yet created any packages)
+  ``` bash
+  cd ~/ros2_ws
+  colcon build
+  ```
+- This will create 3 new directories on the same level as the src: build, log and install. The build contains all the intermediate files needed for the overall build, the log contains the logs for each build and install is where all your nodes will be installed after you build the workspace.
+- Source your workspace (Should be done every after every build and also on new terminals after building
+  ``` bash
+  source ~/ros2_ws/install/setup.bash
+  ```
+- Add it to your bashrc file so that it can be sourced on each new terminal automatically
+  ``` bash
+  gedit ~/.bashrc
+  ```
+- Create a package. A package is a sub-part of your application and is responsible for a particular function is a system such as motion planning in a mobile robot system. They can be of Python or C++ type.
+- Create a python package
+  ``` bash
+  ros2 pkg create <pkg_name> --build-type ament_python --dependencies rclpy
+  ```
+- Important directories to note include:
+    - <pkg_name>(has the same name os your pkg): This is where we create our python nodes
+    - package.xml: provide the dependencies of the pkg
+    - setup.py: write the inctructions to build your python nodes.
+- Create a C++ package
+  ``` bash
+  ros2 pkg create <pkg_name> --build-type ament_cmake --dependencies rclcpp
+  ```
+- Here's a quick explanation of the directories and files:
+  - CMakeLists.txt: provides instructions on how to compile your C++ nodes, create libraries and so on.
+  - include: If you split your project into .cpp and .h (header) files, place the .h files in the include directory.
+  - package.xml: conains more info about the pkg and dependencies on other pkgs
+  - src: where you write your nodes.
 
+- Now go back to the workspace, build and source (or open a new terminal).
+
+- Now let's make a node within the python package (the chmod +x <node_name> is used to make the node executable)
+  ``` bash
+  cd ~/ros2_ws/src/<pkg_name>/<pkg_name>
+  touch my_first_node.py
+  chmod +x my_first_node.py
+  ```
+### Writing a basic python node
   
 
 
