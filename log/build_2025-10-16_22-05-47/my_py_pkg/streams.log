@@ -1,0 +1,37 @@
+[1.073s] Invoking command in '/home/g/my_ros2_ws/src/my_py_pkg': PYTHONPATH=/home/g/my_ros2_ws/build/my_py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/g/my_ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_py_pkg build --build-base /home/g/my_ros2_ws/build/my_py_pkg/build install --record /home/g/my_ros2_ws/build/my_py_pkg/install.log --single-version-externally-managed install_data
+[1.397s] running egg_info
+[1.398s] creating ../../build/my_py_pkg/my_py_pkg.egg-info
+[1.399s] writing ../../build/my_py_pkg/my_py_pkg.egg-info/PKG-INFO
+[1.399s] writing dependency_links to ../../build/my_py_pkg/my_py_pkg.egg-info/dependency_links.txt
+[1.399s] writing entry points to ../../build/my_py_pkg/my_py_pkg.egg-info/entry_points.txt
+[1.399s] writing requirements to ../../build/my_py_pkg/my_py_pkg.egg-info/requires.txt
+[1.400s] writing top-level names to ../../build/my_py_pkg/my_py_pkg.egg-info/top_level.txt
+[1.400s] writing manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'
+[1.402s] reading manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'
+[1.403s] writing manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'
+[1.403s] running build
+[1.403s] running build_py
+[1.404s] creating /home/g/my_ros2_ws/build/my_py_pkg/build
+[1.404s] creating /home/g/my_ros2_ws/build/my_py_pkg/build/lib
+[1.404s] creating /home/g/my_ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.404s] copying my_py_pkg/__init__.py -> /home/g/my_ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.404s] copying my_py_pkg/my_first_node.py -> /home/g/my_ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.404s] running install
+[1.405s] running install_lib
+[1.407s] creating /home/g/my_ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.407s] copying /home/g/my_ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/__init__.py -> /home/g/my_ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.407s] copying /home/g/my_ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/my_first_node.py -> /home/g/my_ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.408s] byte-compiling /home/g/my_ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/__init__.py to __init__.cpython-310.pyc
+[1.408s] byte-compiling /home/g/my_ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/my_first_node.py to my_first_node.cpython-310.pyc
+[1.409s] running install_data
+[1.409s] creating /home/g/my_ros2_ws/install/my_py_pkg/share/ament_index
+[1.409s] creating /home/g/my_ros2_ws/install/my_py_pkg/share/ament_index/resource_index
+[1.410s] creating /home/g/my_ros2_ws/install/my_py_pkg/share/ament_index/resource_index/packages
+[1.410s] copying resource/my_py_pkg -> /home/g/my_ros2_ws/install/my_py_pkg/share/ament_index/resource_index/packages
+[1.410s] copying package.xml -> /home/g/my_ros2_ws/install/my_py_pkg/share/my_py_pkg
+[1.410s] running install_egg_info
+[1.413s] Copying ../../build/my_py_pkg/my_py_pkg.egg-info to /home/g/my_ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg-0.0.0-py3.10.egg-info
+[1.414s] running install_scripts
+[1.440s] Installing my_node_execute script to /home/g/my_ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[1.440s] writing list of installed files to '/home/g/my_ros2_ws/build/my_py_pkg/install.log'
+[1.470s] Invoked command in '/home/g/my_ros2_ws/src/my_py_pkg' returned '0': PYTHONPATH=/home/g/my_ros2_ws/build/my_py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/g/my_ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_py_pkg build --build-base /home/g/my_ros2_ws/build/my_py_pkg/build install --record /home/g/my_ros2_ws/build/my_py_pkg/install.log --single-version-externally-managed install_data
