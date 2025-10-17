@@ -214,6 +214,22 @@ A simple teaching to understand the tools needed to begin projects with the Robo
 - The **file name** is the name of the file in which you created the node
 - The **function name** is the "main" function in the file
 
+## Writing a basic C++ node
+
+- Open the my_cpp_pkg and find the my_cpp_node.cpp (Study the structure of the node).
+- Add the following to your **CMakeLists.txt** in the dependencies section so that the node's executable is created(ros2 run <pkg_name> <executable_name>) and it is installed so that we can find it when we run "ros2 run".
+  ``` txt
+  add_executable(my_cpp_execute src/my_cpp_node.cpp)
+  ament_target_dependencies(my_cpp_execute rclcpp)
+  install (TARGETS
+    my_cpp_execute
+    DESTINATION lib/${PROJECT_NAME}/
+  )
+  ```
+
+### Here's a template for the pythone and C++ nodes
+  
+
 
 
 
