@@ -24,7 +24,13 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            "my_node_execute = my_py_pkg.my_first_node:main" #<executable_name> = <package_name>.<file_name>:<function_name>
+            "my_node_execute = my_py_pkg.my_first_node:main",#<executable_name> = <package_name>.<file_name>:<function_name>
+            "basic_node = my_py_pkg.basic_python_node:main", 
+            "shifter = my_py_pkg.shifter_node:main",
+            "basic_pub = my_py_pkg.basic_publisher:main",
+            "basic_sub = my_py_pkg.basic_subscriber:main",
+            "wave_pub = my_py_pkg.wave_publisher:main",
+            "wave_sub = my_py_pkg.wave_subscriber:main"
         ],
     },
 )
