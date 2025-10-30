@@ -1,0 +1,3 @@
+std_msgs/Float32[7] joint_input
+---
+std_msgs/Float32[7] joint_output
