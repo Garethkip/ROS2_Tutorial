@@ -18,7 +18,7 @@ class JointConversionServer(Node):
         # # Convert the request from a vector to a Float32 list
         # for i in range(len(request.joint_input)):
         #     # joints[i] = request.joint_input[i].data
-        #     joints.append(request.joint_input[i].data[i])
+        #     joints.append(request.joint_input[i].data[i]) #This was the issue
         
         #Apply the offset and convert to degrees
         result =[ x + y for x, y in zip(self.offset, joints) ]

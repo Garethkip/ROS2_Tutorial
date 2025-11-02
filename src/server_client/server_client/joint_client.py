@@ -4,7 +4,7 @@ from rclpy.node import Node
 from srv_pkg.srv import JointConversion
 from std_msgs.msg import Float32
 
-#A client behaves like an action publisher
+#A client behaves like an publisher
 class JointConversionClient(Node):
     def __init__(self):
         super().__init__('Joint_Conversion_Client')
@@ -15,11 +15,11 @@ class JointConversionClient(Node):
             self.get_logger().info('service not available, waiting again ...')
         
     def send_request(self, j_values):
-        req = JointConversion.Request()
+        req = JointConversion.Request() # Create request object
         req.joint_input = [Float32(data=value) for value in j_values]
         # for i in range(len(j_values)):
         #     req.joint_input[i].data = j_values[i]
-        self.future = self.client.call_async(req)
+        self.future = self.client.call_async(req) # Send request asynchronously
         
         rclpy.spin_until_future_complete(self, self.future)
         # print(self.future) 
