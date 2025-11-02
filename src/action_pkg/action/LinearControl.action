@@ -1,0 +1,7 @@
+float32 initial_position
+float32 goal_position
+float32 linear_velocity
+---
+bool motion_done
+---
+float32 distance
