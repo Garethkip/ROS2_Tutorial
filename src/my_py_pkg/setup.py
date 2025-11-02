@@ -30,7 +30,8 @@ setup(
             "basic_pub = my_py_pkg.basic_publisher:main",
             "basic_sub = my_py_pkg.basic_subscriber:main",
             "wave_pub = my_py_pkg.wave_publisher:main",
-            "wave_sub = my_py_pkg.wave_subscriber:main"
+            "wave_sub = my_py_pkg.wave_subscriber:main",
+            "custom_wave_pub = my_py_pkg.custom_sine_wave:main",
         ],
     },
 )
